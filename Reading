@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Warriors - Site Oficial</title>
+    <style>
+        :root {
+            --light-gold: #ffcc00;
+            --shadow-black: #050505;
+            --border-gray: #222;
+            --text-silver: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--shadow-black);
+            color: var(--text-silver);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(180deg, #111 0%, #050505 100%);
+            width: 100%;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: 8px;
+            color: white;
+            text-transform: uppercase;
+            margin: 0;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .nav-container {
+            position: sticky;
+            top: 0;
+            background: rgba(5, 5, 5, 0.95);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-gray);
+            z-index: 1000;
+        }
+
+        .episode-btn {
+            background: none;
+            border: 1px solid #444;
+            color: #888;
+            padding: 8px 16px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .episode-btn:hover, .episode-btn.active {
+            border-color: var(--light-gold);
+            color: var(--light-gold);
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.2);
+        }
+
+        #story-content {
+            max-width: 900px;
+            width: 90%;
+            margin: 40px 0;
+            background: #0a0a0a;
+            padding: 50px;
+            border: 1px solid #1a1a1a;
+            line-height: 1.6;
+            white-space: pre-wrap; /* Mantém as quebras de linha do texto original */
+        }
+
+        /* Estilização Interna do Roteiro */
+        .scene-header { color: #fff; font-weight: bold; background: #1a1a1a; padding: 5px 10px; display: block; margin: 20px 0 10px 0; border-left: 3px solid var(--light-gold); }
+        .character { color: var(--light-gold); font-weight: bold; }
+        .action { color: #888; font-style: italic; }
+        .episode-main-title { font-size: 2rem; color: white; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 30px; text-align: center; }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>LIGHT WARRIORS</h1>
+    <p style="color: #666; letter-spacing: 2px;">Onde a Luz se funde com a Alma</p>
+</header>
+
+<div class="nav-container">
+    <button class="episode-btn" onclick="loadEpisode(1)">EP 1</button>
+    <button class="episode-btn" onclick="loadEpisode(2)">EP 2</button>
+    <button class="episode-btn" onclick="loadEpisode(3)">EP 3</button>
+    <button class="episode-btn" onclick="loadEpisode(4)">EP 4</button>
+    <button class="episode-btn" onclick="loadEpisode(5)">EP 5</button>
+    <button class="episode-btn" onclick="loadEpisode(6)">EP 6</button>
+</div>
+
+<main id="story-content">Selecione um episódio para começar a leitura...</main>
+
+<script>
+const data = {
+    1: `1-EPISÓDIO 1: AS FLORES DE POKYO
+(Beco de Pokyo – Há 12 anos)
+(A chuva cai com força. A Senhora Hana caminha apressada quando vê um vulto pequeno encolhido junto ao lixo. É Shin, com 5 anos, um menino abandonado de poucas palavras, a tremer de frio.)
+HANA: (Abaixando-se e cobrindo-o com o seu xaile) Olá, pequeno. Estás aqui sozinho? Onde é a tua casa?
+SHIN (5 anos): (Olha para ela em silêncio, abanando a cabeça negativamente.)
+HANA: (Estende a mão com um sorriso doce) Então, a partir de hoje, a minha casa será a tua. Em Pokyo, ninguém deve crescer ao frio.
+(Casa da Senhora Hana / Escola – Dos 6 aos 12 anos)
+(Passagem de tempo mostrando a educação de Shin. Ele é reservado, mas Hana molda o seu carácter com paciência e ralhetes constantes.)
+HANA (Aos 9 anos): (Severa, após Shin chegar com a mochila rasgada) Shin! Outra vez à pancada? O que é que eu te ensinei sobre a força? Ser forte não é sobre quem derrubas, é sobre quem manténs de pé. Amanhã pedes desculpa, mas não recuas no que é justo. Entendido?
+SHIN: (Acena com a cabeça) Entendido, Senhora Hana.
+(Cenas rápidas de Shin na escola aos 11 anos: ele é o rapaz mais popular, carismático e respeitado. Trata as colegas com uma educação impecável, tornando-se um líder natural.)
+COLEGA: Shin, como é que consegues ser tão popular sem sequer te esforçares?
+SHIN: (Sorriso discreto) Eu apenas as trato com o respeito que a Senhora Hana me ensinou.
+(Avenida de Pokyo – Há 5 anos – Shin com 12 anos)
+(Um dia de sol. Shin e Hana atravessavam a avenida quando um camião descontrolado sobe o passeio.)
+SHIN: (Gritando) SENHORA HANA! CUIDADO!
+(Shin tenta empurrá-la, mas o impacto é brutal. Ele é projetado contra uma montra de vidro, sentindo estilhaços a rasgar-lhe o braço e a perna. Coberto de sangue e gravemente ferido, rasteja até ela.)
+SHIN (12 anos): (A chorar, segurando a mão dela) Hana... por favor, não me deixes...
+HANA: (Com um último fôlego) Shin... meu menino... Não deixes que a dor... te apague a luz. Sê... o protetor...
+(Hana morre ali. Shin passa meses no hospital a olhar para as cicatrizes. Ele herda a casa e vive lá sozinho, mantendo tudo como um santuário.)
+(Rua de Pokyo – Atualidade – Shin com 15 anos)
+COLEGA 1: Shin! Vais à festa logo à noite? Sem ti, metade das raparigas nem aparece!
+SHIN (15 anos): (Sorriso gentil) Gostava muito, a sério. Mas hoje é o meu aniversário. Quero passar a noite em casa a arrumar umas coisas da Senhora Hana. Divirtam-se!
+(Casa de Shin – Noite)
+(Shin está sozinho. Um pequeno bolo está na mesa. De repente, a porta é arrombada por dois recrutas da Escuridão de vestes negras.)
+RECRUTA 1: Finalmente. O rastro termina neste órfão.
+SHIN: (Em guarda) Quem são vocês? O que é que querem?
+RECRUTA 2: (Ergue a mão e uma névoa negra prende os pés de Shin) Tolice humana. Tu nem sabes o sangue que corre nessas veias. Prisão Sombria!
+SHIN: (A lutar para se soltar) Mas que raio... o que é isto?! Sombras... sólidas?!
+RECRUTA 1: (Cria uma espada de escuridão e avança para o matar) Adeus.
+SHIN: (Sentindo um calor insuportável no peito) SAIAM DE PERTO DE MIM!
+(Uma explosão de luz branca pura explode de Shin, lançando os recrutas contra as paredes com força devastadora. Shin cai de joelhos, ofegante, enquanto a luz desaparece.)
+(Casa de Shin – Manhã Seguinte)
+(Shin está sentado nos destroços. Um homem de túnica branca e olhar sereno entra: Takumi, o instrutor.)
+TAKUMI: Tens um bom instinto, rapaz. Aqueles dois eram apenas recrutas de baixo nível, mas para alguém sem treino... o que fizeste foi extraordinário.
+SHIN: (Olha para cima, exausto) Quem é o senhor? O que é que se passa comigo? Que magia foi aquela?
+TAKUMI: O meu nome é Takumi. O mundo não é o que pensas, Shin. Existem sete elementos e uma guerra silenciosa a acontecer. Tu tens aptidão para a Luz, e agora que eles te encontraram, esta cidade já não é segura para ti.
+SHIN: (Silêncio longo) Eu não tenho família. Não tenho nada. Se este poder é o que me resta... ensine-me. Eu não quero ser caçado.
+TAKUMI: (Acena com a cabeça) Então levanta-te. Vamos para a base. Tens muito que aprender.
+(Base da Luz – 2 anos depois – Shin aos 17 anos)
+(Campo de treino. Shin está focado. Takumi observa-o de braços cruzados.)
+TAKUMI: Foco, Shin! A luz é moldada pela tua mente. Se a tua vontade vacilar, a arma quebra!
+SHIN (17 anos): (Fecha os olhos. Concentra-se. Uma energia branca incandescente flui das suas mãos. Lentamente, as partículas solidificam-se numa lâmina de luz pura, vibrando intensamente.)
+TAKUMI: (Ataca com uma vara de treino) Defende!
+(Shin bloqueia o golpe com a sua espada de luz. O som é cristalino. Ele gira com agilidade, mantendo a forma da arma estável.)
+TAKUMI: Bom progresso. Já consegues manter a forma por tempo suficiente. Estás oficialmente registado como um Recruta do Exército da Luz.
+(Sala de Briefing – Pouco depois)
+(Shin entra na sala com o uniforme cinzento de recruta. Três jovens esperam. Um deles está sentado na mesa a fazer girar uma adaga de luz entre os dedos, com um olhar arrogante.)
+SHIN: Sou o Shin. Reportando-me para a primeira missão.
+RECRUTA NA MESA: (Olha de lado) Então tu é que foste treinado pelo Takumi? Para quem demorou dois anos, essa tua espada de luz ainda parece um bocado instável.
+SHIN: (Mantém a calma) Ela corta o que é preciso. O brilho não ganha batalhas.
+RECRUTA NA MESA: (Levanta-se, sorrindo de forma desafiadora) Veremos isso lá fora. Se fores demasiado lento, não esperes por mim. Sou o Haruto, e não gosto de carregar pesos mortos.
+RECRUTA 3: Calem-se os dois! O Capitão Kael está a entrar.
+CAPITÃO KAEL: (Coloca uma pasta na mesa) Silêncio. Temos soldados desaparecidos em Old York. É uma cidade de civis, pessoas normais que não fazem ideia do que está a acontecer.
+SHIN: (Olhando para o mapa) Se a Escuridão está em Old York, eles correm perigo.
+CAPITÃO KAEL: Precisamente. O objetivo é reconhecimento e resgate, mas leiam os detalhes da inteligência. (Ele abre a pasta).
+(Shin e Haruto aproximam-se. Ao lerem os documentos, o silêncio toma conta da sala. Haruto perde o sorriso irónico.)
+SHIN: (Sério) Isto... isto não pode ser apenas uma patrulha. Se este relatório estiver certo, eles estão a preparar algo muito maior naquela cidade.
+HARUTO: (Aperta o punho, a sua adaga de luz brilha mais forte) Maldição... Se isto for verdade, Old York vai tornar-se um campo de abate.
+CAPITÃO KAEL: Vocês partem agora. Entendam bem a missão: localizem os soldados e tragam a informação. O tempo é o nosso maior inimigo.
+SHIN: (Aperta os punhos, sentindo a energia da luz vibrar sob a pele) Entendido.
+(Corte para preto enquanto os quatro recrutas saem da sala em passo acelerado.)
+FIM DO EPISÓDIO 1`,
+
+    2: `2-EPISÓDIO 2: O SALTO PARA O DESCONHECIDO
+PRÓLOGO: O RESUMO DO NARRADOR
+(Imagens rápidas do Ep. 1: O acidente da Senhora Hana em Pokyo, o despertar da luz de Shin e o treino intenso com Takumi.)
+NARRADOR: Shin, um jovem marcado pela tragédia em Pokyo, descobriu que o brilho no seu peito não era apenas uma memória, mas o poder da Luz. Após dois anos de treino sob a tutela de Takumi, ele une-se ao Exército da Luz para a sua primeira prova de fogo. Agora, uma missão crítica em Old York aguarda-o. Mas as sombras movem-se depressa... Conseguirão estes novos recrutas completar a missão, ou serão engolidos pela escuridão que os espreita?
+CENA 1: O ÚLTIMO ONIGIRI
+CORREDOR DA BASE – MANHÃ (Os quatro recrutas caminham em passo acelerado pelos corredores metálicos. Haruto segura dois triângulos de arroz (onigiri). Mal Shin se aproxima, Haruto guarda um no bolso com rapidez e começa a comer o outro de forma provocadora.)
+SHIN: (Com a barriga a roncar audivelmente) Ei, Haruto... esse é o último de salmão da cafetaria? Eu não comi nada desde o treino da madrugada.
+HARUTO: (Olha para o onigiri com um sorriso de lado) É o último de salmão picante. E como tu és o "novato lento", devias saber que no exército, quem não corre, não come.
+SHIN: (Lança a mão num movimento rápido, mas Haruto desvia-se com agilidade) Dá-me metade. Eu treinei duas horas antes de tu acordares, precisas de menos energia do que eu.
+HARUTO: (Levanta o braço bem alto, rindo) Queres? Então salta, "Luzinha"! (Shin tenta impulsionar-se no ombro de Haruto para chegar à comida, mas Haruto faz-lhe uma rasteira leve; Shin recupera o equilíbrio e tenta um "bote" direto à mão do rival. Os dois começam a empurrar-se e a tropeçar nos próprios pés enquanto caminham, ignorando os olhares dos outros soldados.) 
+MIA (RECRUTA 4): (Suspirando fundo) Podem parar com isso? Estamos a caminho de uma zona de guerra e vocês parecem dois miúdos a lutar por um doce!
+SHIN: (Consegue finalmente arrancar um pedaço do onigiri da mão de Haruto) Ganhei.
+HARUTO: (Resmungando enquanto limpa a boca) Sorte de principiante. Não te engasgues.
+CENA 2: A MÁQUINA LITT
+HANGAR DE TELEPORTE (À frente deles está uma estrutura circular massiva, cheia de cabos e anéis de energia branca: a LITT (Light Instant Transmission & Teleport). Um homem de bata branca e óculos tecnológicos ajusta os comandos: o Cientista Aris.)
+ARIS: (Sem tirar os olhos do monitor) Atenção, recrutas. A LITT vai converter a vossa massa em fotões por milésimos de segundo. Se sentirem que estão a derreter, é perfeitamente normal. Só tentem não espirrar durante o processo, ou podem aparecer em Old York sem uma orelha.
+SHIN: (Olhando para o brilho da máquina, hesitante) Isso é suposto ser uma piada, senhor Aris?
+FLASHBACK RÁPIDO (Voz de Takumi): "Escuta bem, Shin. A Escuridão não é um caos desorganizado. Eles têm 10 Divisões militares perfeitamente estruturadas. Atualmente, o Exército da Luz está em guerra total contra todas elas. Eles querem apagar cada foco de luz do mundo, e não vão parar enquanto houver uma vela acesa." 
+HARUTO: (Empurra Shin para o centro da plataforma) Deixa de fazer perguntas e entra logo. Old York não espera por cobardes. (Aris puxa uma alavanca. Um som agudo consome o ambiente e um clarão cego preenche o ecrã.)
+CENA 3: A CIDADE DA APATIA
+OLD YORK – RUA PRINCIPAL – DIA (A equipa materializa-se num beco sombrio. O cenário é desolador. Não há destruição visível, mas as ruas estão mergulhadas num silêncio doentio. Eles caminham devagar, observando as montras das lojas fechadas e os rostos das pessoas.)
+SHIN: (Voz baixa) Sinto um peso no peito... é como se o ar estivesse parado.
+HARUTO: (Olha para os civis que caminham como sombras) Onde estão os guardas civis? São os únicos que sabem o que se passa realmente... os outros parecem estar noutro mundo.
+(Shin aproxima-se de uma mulher sentada num degrau, que olha fixamente para o chão.)
+SHIN: (Escondendo o emblema do uniforme) Com licença... estamos à procura de uns amigos nossos, rapazes novos, vestidos de cinzento. Passaram por aqui?
+MULHER: (Leva longos segundos a levantar a cabeça. O olhar dela é vazio, sem qualquer centelha de esperança.)
+SHIN: Por favor, é importante.
+MULHER: (Voz arrastada) Amigos?... Para quê procurá-los? Onde quer que estejam, é melhor do que aqui. Deixem-nos estar... amanhã será igual a hoje.
+SHIN: (Tenta insistir) Mas eles podem estar feridos! (A mulher ignora-o completamente e volta a baixar a cabeça. Eles percorrem quilómetros de ruas apáticas, onde ninguém fala, ninguém sorri e ninguém se ajuda.)
+CENA 4: O DESESPERO DO RECRUTA 3
+BECO DO SETOR NORTE – FIM DE TARDE (Eles chegam a um cruzamento onde o asfalto tem marcas de botas pesadas. O Recruta 3 deixa cair a sua arma de luz, que se desfaz em partículas antes de desaparecer. Ele senta-se no chão, encostado a uma parede suja.)
+RECRUTA 3: (Voz monótona e triste) Olhem para estas marcas... os soldados estiveram aqui. Mas para quê continuar?
+SHIN: (Confuso) O que queres dizer com isso? Temos de encontrá-los!
+RECRUTA 3: Para quê, Shin? Se eles não conseguiram, nós também não vamos conseguir. Já andamos aqui há horas... não encontramos nada útil. Esta cidade já está morta. Olhem para estas pessoas... elas têm razão. Desistir é mais fácil do que lutar contra algo que não podemos vencer. Eu só quero... ficar aqui. Não vale a pena o esforço de respirar.
+HARUTO: (Agarra-o pela frente da túnica, furioso) Levanta-te! Estás a falar como um desses civis! Queres morrer aqui como um cão?
+RECRUTA 3: (Sem reagir) Morrer... viver... qual é a diferença agora? Está tudo tão cinzento.
+SHIN: (Sério, a voz num sussurro tenso) Haruto, larga-o. Não é culpa dele. Não vês? É o ambiente. De alguma forma, a vontade deles está a ser drenada. Não é cansaço físico... é como se algo invisível estivesse a sugar a alma desta cidade. Algo está a consumir a nossa necessidade de resistir.
+FLASH DE MEMÓRIA (Pasta do Capitão Kael): (A imagem de um homem de armadura negra e uma máscara de caveira. Texto: Líder da 10ª Divisão da Escuridão: Vorgos.)
+SHIN: Se o Líder da 10ª Divisão está aqui, esta apatia não é natural. Ele está a drenar a vontade de todos... e os soldados devem ter caído na mesma armadilha. Temos de avançar antes que a nossa própria luz se apague.
+CENA 5: O RISO NA ESTÁTUA
+PRAÇA DA SOCIEDADE – ANOITECER (O céu está num tom de laranja doentio. Eles chegam à Estátua da Sociedade, que representa duas mãos gigantes de pedra unidas. O silêncio na praça é absoluto.)
+MIA (RECRUTA 4): (Pára de repente, a apontar com a mão a tremer) Pessoal... olhem lá para cima. Na mão da estátua.
+(A câmara sobe muito lentamente pelo braço de pedra até ao topo. Sentada de pernas cruzadas, balançando os pés com um desdém infantil, está uma figura envolta numa capa negra que flutua ao sabor do vento frio.)
+FIGURA MISTERIOSA: (Lança a cabeça para trás e solta uma gargalhada histérica, estridente e prolongada, que ecoa por toda a cidade silenciosa.) HAHAHAHAHA! FINALMENTE! MANDARAM CRIANÇAS PARA BRINCAR NO MEU JARDIM DAS ALMAS PERDIDAS?! QUE DELÍCIA!
+(A figura levanta-se lentamente, revelando olhos roxos que brilham sob a escuridão do capuz.)
+SHIN: (Aperta o punho, a luz branca começa a emanar das suas cicatrizes e mãos) É ele... o Líder da 10ª Divisão.
+(A câmara foca no sorriso insano da figura e o ecrã corta para preto.)
+FIM DO EPISÓDIO 2`,
+
+    3: `3-EPISÓDIO 3: A ALMA DA ESCURIDÃO
+PRÓLOGO: O RESUMO DO NARRADOR
+(Imagens rápidas do Ep. 1 e Ep. 2: O acidente da Senhora Hana em Pokyo, o despertar da luz de Shin, o treino intenso com Takumi e a chegada à cidade apática de Old York.)
+NARRADOR: Shin, um jovem marcado pela tragédia em Pokyo, descobriu que o brilho no seu peito não era apenas uma memória, mas o poder da Luz. Após dois anos de treino sob a tutela de Takumi, ele une-se ao Exército da Luz para a sua primeira prova de fogo. Agora, uma missão crítica em Old York aguarda-o. Mas as sombras movem-se depressa e o inimigo revelou-se. Conseguirão estes novos recrutas completar a missão, ou serão engolidos pela escuridão que os espreita?
+CENA 1: A CRISE DA LUZ E A ALMA ELEMENTAL (FLASHBACK)
+BASE DA LUZ – CAMPO DE TREINO (Há 1 ano e 11 meses) (Faz apenas três semanas que Shin chegou à base. Ele está ajoelhado no chão de terra, a suar em bica, com as mãos estendidas. Uma pequena adaga de luz treme entre as suas palmas, falhando e piscando até se desfazer em faíscas inofensivas. Shin suspira, frustrado.)
+TAKUMI: (Caminha lentamente à volta de Shin, com as mãos atrás das costas) Estás a forçar a luz, Shin. A luz não é um martelo que usas para bater num prego. É um reflexo do teu interior.
+SHIN: (Ofegante, limpando o suor da testa) É difícil... Eu sinto a energia, mas não a consigo prender na forma certa. Porque é que a urgência é tanta? Porque é que me treina todos os dias sem descanso?
+TAKUMI: (Pára de andar e olha para o horizonte, com uma expressão grave) Porque o tempo não está do nosso lado. O que te vou dizer agora não é do conhecimento dos recrutas comuns. A Luz está a atravessar uma crise sem precedentes.
+SHIN: (Levanta o olhar, confuso) Uma crise?
+TAKUMI: A Escuridão tem dez divisões perfeitamente armadas e organizadas. Nós... nós fomos dizimados ao longo dos anos. Atualmente, o Exército da Luz conta apenas com duas divisões operacionais. E eu sou o líder da 2ª Divisão.
+SHIN: (Arregala os olhos, em choque) Um... um líder de divisão? E está a perder o seu tempo a treinar um miúdo resgatado da rua? Senhor... eu nem sei como agradecer esta honra.
+TAKUMI: Agradeces-me sobrevivendo, rapaz. E para sobreviveres, a tua luz básica não será suficiente. Terás de alcançar o que chamamos de Alma Elemental.
+SHIN: Alma Elemental? O que é isso?
+TAKUMI: É a evolução máxima de um utilizador de energia. É quando o teu elemento se funde com o núcleo da tua personalidade, criando um poder único e exclusivo teu. Algo que mais ninguém consegue replicar. Eu acredito que tu tens potencial para despertar uma. Mas fica o aviso: vais encontrar muitos inimigos lá fora que já possuem uma Alma Elemental. Quando isso acontecer, as regras normais do combate deixam de se aplicar.
+(Shin olha para as suas próprias mãos, apertando os punhos com determinação.)
+CENA 2: O ATAQUE E O NEVOEIRO
+OLD YORK – PRAÇA DA SOCIEDADE – PRESENTE (A gargalhada histérica de Vorgos ainda ecoa pela praça. A figura sinistra continua sentada na mão da estátua gigante.)
+HARUTO: (Com os dentes cerrados, a raiva a tomar conta do seu rosto) Eu já estou farto de te ouvir rir! (Num movimento explosivo, Haruto canaliza uma enorme quantidade de energia para a sua mão. A adaga de luz que ele segura cresce rapidamente, transformando-se numa lâmina larga e incandescente. Ele atira-a com uma velocidade descomunal, rasgando o ar diretamente na direção do peito de Vorgos.)
+(A adaga está prestes a atingir o alvo, mas a centímetros de Vorgos, uma barreira densa e esférica de escuridão materializa-se. A luz bate no escudo, é absorvida como água numa esponja, e desaparece sem deixar marca. Logo a seguir, Vorgos estala os dedos. Ocorre uma explosão de fumo negro no topo da estátua, e ele desaparece completamente.)
+VOZ DE VORGOS: (A ecoar de todas as direções através do nevoeiro denso que começa a cobrir o chão da praça) Gostaram deste silêncio? Gostaram desta tristeza? Daqui a nada, estarão exatamente iguais, tal como o vosso amiguinho...
+SHIN: (A olhar em volta, em posição defensiva) Mostra-te!
+VOZ DE VORGOS: Se se estão a perguntar o que aconteceu a esta cidade... sim, sou eu. Eu dreno a felicidade e transformo-a em escuridão e tristeza. As pessoas ficam vazias quando estão na minha área de nevoeiro... o nevoeiro em que vocês estão mergulhados há horas e que ignoraram, achando que era apenas o clima... Oh, olhem bem à vossa volta. Parece que a vossa amiguinha também já chegou ao limite.
+(Shin e Haruto olham rapidamente para trás. A Recruta 4 (Mia), que estava de pé a tremer, deixa cair a sua arma. O seu rosto perde qualquer expressão. Sem dizer uma única palavra, ela caminha lentamente até ao Recruta 3, que continua prostrado no chão, e senta-se ao lado dele, abraçando os joelhos, com o olhar completamente vazio e rendido à tristeza.)
+SHIN: (Lembra-se da conversa com Takumi e aperta os dentes) Isto... isto não é apenas magia negra comum. Drenar emoções e transformá-las em poder... Isto só pode ser obra de uma Alma Elemental!
+HARUTO: (Em pânico, mas sem perder a postura) Maldição! Precisamos de reforços agora! (Haruto aponta a mão livre para o céu escuro e dispara um feixe intenso e concentrado — o tiro de ajuda, o sinal de emergência dos guerreiros da Luz. O raio sobe a alta velocidade, mas assim que atinge a camada superior do nevoeiro, a luz é completamente engolida e desvanece-se numa nuvem cinzenta.) HARUTO: (A olhar para cima, incrédulo, com a voz a falhar) Oh...
+CENA 3: A LUTA PELA SOBREVIVÊNCIA
+PRAÇA DA SOCIEDADE – NEVOEIRO DENSO (O nevoeiro rodopia à frente de Shin e Haruto. De dentro das sombras, passos pesados fazem-se ouvir. Dez vultos escuros emergem simultaneamente. São soldados da 10ª Divisão da Escuridão, armados com foices e espadas de energia negra, com os rostos ocultos por máscaras grotescas.)
+SHIN: (Foca a sua energia. Uma luz ofuscante sai do seu braço esquerdo, solidificando-se num escudo circular e espesso. Na mão direita, ele materializa a sua espada de luz longa.) Não há para onde fugir, Haruto. Protege as costas!
+HARUTO: (Cria duas adagas de luz brilhantes, rodando-as nas mãos) Não me dês ordens, "Luzinha". Tenta não morrer!
+(Os dez soldados avançam em uníssono. A batalha rebenta.)
+(Shin bloqueia um ataque duplo com o seu escudo. O impacto gera faíscas brilhantes. Ele empurra com força, desequilibrando os inimigos, e usa a espada para num corte horizontal dissipar a escuridão do primeiro soldado. Haruto usa a sua agilidade incrível, deslizando por baixo da foice de um atacante e cravando as duas adagas no peito do inimigo, destruindo-o numa nuvem de pó escuro.)
+(A luta é longa e extenuante. A câmara acompanha movimentos fluidos de combate. Três soldados cercam Haruto. Shin corre em sua direção, atira o escudo como um projétil para atordoar um, defende o golpe do segundo com a espada, e Haruto salta sobre as costas de Shin para atingir o terceiro vindo de cima. A sincronia entre os dois rivais, mesmo forçada, é impressionante.)
+(Golpes cruzam-se, luz branca colide com sombras sólidas. Shin é atingido de raspão no braço, a sua roupa rasga-se, mas ele ignora a dor e continua a defender o perímetro onde a Recruta 4 e o Recruta 3 estão sentados, apáticos. Haruto está ofegante, mas não abranda, retalhando as sombras com cortes precisos e rápidos.)
+(Finalmente, após uma longa troca de golpes mortais, Haruto corta o nono soldado ao meio. Resta apenas um. O último soldado da Escuridão olha para os seus companheiros destruídos, olha para a espada de Shin e para as adagas de Haruto... larga a sua arma no chão, vira costas e desata a correr desesperadamente para longe, a gritar, desaparecendo no nevoeiro.)
+CENA 4: O CICLO DO SOFRIMENTO
+(O silêncio regressa, quebrado apenas pela respiração pesada dos dois recrutas. Shin baixa ligeiramente a espada e olha para Haruto. Apesar da gravidade da situação, Shin não consegue evitar um sorriso subtil de canto de boca, reconhecendo o excelente trabalho de equipa.)
+(Haruto repara no sorriso de Shin, suspira de forma pesada e revira os olhos, como se dissesse "nem te atrevas a achar que somos amigos".)
+(Mas quando Haruto volta o olhar para a frente e os seus olhos se ajustam novamente ao nevoeiro denso... o seu rosto perde a cor.)
+(De dentro da névoa negra, as sombras começam a mover-se novamente. Mais de dez vultos idênticos emergem, alinhando-se com as armas em punho. Estão exatamente na mesma situação.)
+VOZ DE VORGOS: (O riso insano volta a ecoar, agora mais alto e penetrante) Pobre Luz... Vocês não compreendem? Vocês vão sofrer até a vossa luz se apagar, juntamente com a vossa felicidade.
+(A câmara aproxima-se dos rostos tensos e exaustos de Shin e Haruto, que voltam a levantar as suas armas, iluminando o ecrã antes de cortar abruptamente para preto.)
+FIM DO EPISÓDIO 3`,
+
+    4: `4-EPISÓDIO 4: A SOMBRA VIVA
+PRÓLOGO: O RESUMO DO NARRADOR
+(Imagens rápidas do Ep. 3: A revelação de Vorgos, a incapacidade da Recruta 4, o ataque falhado de Haruto e a chegada implacável dos soldados da 10ª Divisão.)
+NARRADOR: O nevoeiro de Old York não esconde apenas inimigos, drena a própria vontade de viver. Shin e Haruto, cercados pelas sombras da 10ª Divisão, viram-se forçados a lutar lado a lado para protegerem os seus companheiros apáticos. Mas no mundo elemental, a escuridão tem muitas formas, e o verdadeiro pesadelo destes jovens recrutas está apenas a começar.
+CENA 1: A ESTABILIDADE DA LUZ (FLASHBACK)
+BASE DA LUZ – CAMPO DE TREINO (No 2º mês de Shin) (Shin está no centro do campo, focado. O suor escorre-lhe pelo rosto. Ele une as mãos e, com um som cristalino, uma pequena adaga de luz branca solidifica-se. Não treme, não emite faíscas descontroladas. É perfeitamente estável e brilhante.)
+TAKUMI: (Observa com os braços cruzados e um pequeno sorriso de aprovação) Estás a evoluir rápido, miúdo. Dois meses e já controlas a densidade.
+SHIN: (Desfaz a adaga, ofegante) Obrigado. Mas não tem nenhuma dica para me ajudar a produzir mais luz? Sinto que a quantidade de energia que consigo libertar ainda é muito pouca.
+TAKUMI: (Vira costas, caminhando devagar) Controlar uma gota é mais importante do que invocar um oceano desgovernado. Como produzir mais luz... isso é para o futuro. Por agora, mantém a mente limpa.
+(A luz ofuscante do campo de treino desvanece e o ecrã escurece, engolido pelo nevoeiro.)
+CENA 2: O LIMITE DA ESPERANÇA
+OLD YORK – PRAÇA DA SOCIEDADE – PRESENTE (O cenário é de pura exaustão. À volta de Shin e Haruto, dezenas de marcas de cinzas escuras mancham o chão. Eles acabaram de sobreviver a mais cinco hordas de dez inimigos. A respiração de ambos é incrivelmente pesada.)
+HARUTO: (Apoia-se nos joelhos, com o olhar mais baço do que o normal. A sua luz está mais fraca) Foram... cinquenta. Estes malditos não param de aparecer.
+SHIN: (Com o escudo desfeito e a espada a tremer na mão. A expressão dele está invadida por uma tristeza invulgar) O nevoeiro... está a entrar-nos na mente, Haruto. Sinto os meus braços a desistir.
+(O som de passos lentos e deliberados ecoa no nevoeiro. Uma única figura aproxima-se. É um homem alto, de sorriso cínico e feições afiadas. Nos braços, ele embala um pequeno gato de rua, sujo e assustado.)
+HOMEM: Impressionante. Aguentaram as sombras básicas do nosso líder. O meu nome é Morvan. E odeio lutar com as minhas próprias mãos.
+SHIN: (Ergue a espada, vacilante) O que é que queres?
+MORVAN: Mostrar-vos a minha Alma Elemental. O meu poder é simples: eu ofereço a minha energia densa da escuridão a seres vivos não elementais. Como este pobre animal.
+(Morvan crava os dedos cravados de aura negra nas costas do gato. O animal solta um miado de pura agonia. O seu corpo pequeno começa a expandir-se brutalmente, os ossos estalam, os músculos rasgam e crescem. Em segundos, o gato transforma-se numa besta bípede, com quase dois metros, garras enormes e uma postura humana assustadora. A besta rosna, e a sua voz é grave e gutural.)
+BESTA FELINA: (Fica sobre as patas traseiras, a babar energia negra) Fome... Desespero... Destruir!
+MORVAN: (Aponta para os dois) Divirtam-se.
+CENA 3: A BESTA E O MESTRE
+(A besta felina avança com uma velocidade aterradora diretamente para Shin. Haruto, num impulso de raiva, arranca na direção de Morvan com as duas adagas de luz empunhadas.)
+(Shin levanta o escudo a tempo de bloquear uma patada brutal da besta. O impacto atira Shin a deslizar pelo asfalto. A criatura ataca sem tréguas, balançando as garras numa fúria cega. Shin esquiva-se de um golpe que rasga o chão de pedra e tenta um corte na perna da besta, mas a pele infundida em escuridão é dura como aço.)
+SHIN: (A olhar para os olhos da besta, vendo um pingo de dor do gato original) Eu sei que estás a sofrer... Desculpa! (Shin concentra toda a luz que lhe resta na lâmina. A besta salta para um ataque fatal vindo de cima. Shin desliza pelo chão, passando por baixo do monstro, e desfere um corte vertical perfeito, rasgando o peito da criatura. A energia negra explode e dissipa-se. O corpo monstruoso desfaz-se em cinzas, deixando apenas o pequeno gato de rua no chão, sem vida.)
+(Enquanto isso, Haruto está a perder feio. Ele atira ataques rápidos, mas Morvan move-se como um fantasma, desviando-se com facilidade irritante. Morvan acerta um pontapé giratório nas costelas de Haruto, lançando-o contra um carro abandonado. Haruto cospe sangue, visivelmente afetado pela apatia do nevoeiro, quase sem força para se levantar.)
+MORVAN: (A caminhar para Haruto para o golpe final) É inútil. A vossa vontade já está morta.
+SHIN: (Aterra entre os dois, bloqueando Morvan com o escudo) Haruto! Levanta-te! Não lhe dês o que ele quer!
+(A luta torna-se um combate de dois contra um. A coreografia é furiosa. Shin ataca com golpes pesados da sua espada longa, forçando Morvan a recuar. Morvan invoca adagas de escuridão pura e tenta apunhalar Shin, mas Haruto, recuperando o fôlego, lança uma das suas adagas de luz à distância. A arma crava-se no ombro de Morvan, que grita de dor.)
+(Aproveitando a brecha, Shin atira o seu escudo com toda a força, atingindo o rosto de Morvan, atordoando-o. Haruto corre em velocidade máxima, salta nas costas de Shin como num trampolim, e no ar, materializa uma nova adaga maior. Ele desce com o peso todo do seu corpo, cravando a lâmina de luz diretamente no peito de Morvan, rasgando o seu núcleo de escuridão.)
+CENA 4: A TRANSFERÊNCIA Sombria
+(Morvan cai de joelhos. A luz do ataque de Haruto começa a desintegrar o seu corpo a partir de dentro. Ele tosse sangue negro, mas o seu sorriso sádico não desaparece.)
+MORVAN: (Olha com um olhar doentio para o lado, para onde estão sentados a Recruta 4 e o Recruta 3) Eu posso estar a morrer... mas a minha Alma Elemental... precisa de um último recetáculo.
+SHIN: (Arregala os olhos e tenta correr) Não!
+(Como o Recruta 3 está completamente apático, a sua luz elemental natural desligou-se por completo. Ele é, neste momento, um recetáculo vazio. Morvan estende a mão e dispara o que resta da sua energia negra, que atinge o peito do Recruta 3 num impacto surdo. Morvan desfaz-se em cinzas logo a seguir, rindo.)
+(O Recruta 3 cai para trás. O seu corpo convulsiona violentamente. A Recruta 4, ao lado dele, apenas olha para o chão, alheada do perigo. De repente, o Recruta 3 levanta-se. Os seus olhos estão completamente roxos. As suas mãos transformaram-se em garras escuras e a sua expressão é a de um animal enraivecido.)
+RECRUTA 3 MUTANTE: (Solta um rugido distorcido e salta na direção de Shin)
+HARUTO: (Cria uma adaga, em pânico) Ele foi possuído! Temos de matá-lo!
+SHIN: Não!! Ele é o nosso colega! Bloqueia os golpes, não o ataques!
+(Inicia-se uma sequência angustiante de evasão. O Recruta 3 ataca com uma força desmedida. Haruto é obrigado a usar apenas a agulha da sua adaga para desviar os arranhões mortais. Shin deita o escudo no chão e tenta imobilizá-lo com as mãos nuas. O Recruta 3 morde, arranha e grita.)
+(O esforço para conter um aliado ensandecido arrasta-se por longos minutos. Shin recebe vários cortes nos braços ao tentar abraçá-lo por trás. Haruto faz uma rasteira e eles prendem o Recruta 3 no chão de pedra. Ele contorce-se ferozmente.)
+(Lentamente, o corpo do Recruta 3 não suporta a energia parasita. Como não era a sua própria alma, a escuridão começa a evaporar em fumaça fina. Os seus músculos relaxam, os olhos voltam ao normal, e as garras desaparecem.)
+RECRUTA 3: (Vira o rosto para o asfalto, chorando baixinho, com a voz embargada pela apatia extrema) Porquê... porque é que não me deixaram morrer? Dói tanto...
+(Shin larga os ombros do colega, completamente exausto mental e fisicamente. Haruto senta-se no chão, a olhar para o vazio.)
+CENA 5: O SILÊNCIO INESPERADO
+(O nevoeiro parece ficar ainda mais denso e opressivo. A gargalhada distante cessa, substituída por um tom de deboche que ecoa em todas as paredes da praça.)
+VOZ DE VORGOS: Gostaram do Morvan? Vejo que estão a chegar ao vosso limite... Tanta luz desperdiçada, tanto esforço inútil. Em breve, os vossos corações vão parar de bater, não por ferimentos, mas por tédio.
+(A voz maliciosa ecoa, preparando-se para mais uma humilhação. Shin aperta os olhos, à espera da próxima provocação. Mas subitamente, a voz estaca.)
+VOZ DE VORGOS: Oh.
+(Apenas aquela sílaba solitária. E depois, um silêncio absoluto e cortante toma conta de toda a cidade de Old York. O ecrã corta abruptamente para preto.)
+FIM DO EPISÓDIO 4`,
+
+    5: `5-EPISÓDIO 5: A LUZ ARROGANTE E O NEVOEIRO NEGRO
+CENA 1: O ESCUDO E O SOBRINHO (FLASHBACK)
+BASE DA LUZ (5º Mês de Treino de Shin)
+(Shin está no campo de treino, de joelhos, a suar intensamente. Ele mantém as mãos espalmadas para a frente, sustentando um escudo de luz que treme ligeiramente sob a pressão do exercício.)
+TAKUMI: (Caminha lentamente ao redor de Shin, avaliando a densidade da luz) Estás a focar-te demasiado no centro, Shin. Um escudo não é uma parede de pedra rígida. A luz tem de fluir para as bordas para dissipar o impacto.
+SHIN: (A respirar com dificuldade, ajusta a energia) É difícil manter a estabilidade quando a área é tão grande... O senhor conseguiu dominar isto em quanto tempo?
+TAKUMI: (Sorri de forma nostálgica e olha para o céu) Eu demorei anos. Mas a linhagem conta muito neste mundo. Eu tenho um sobrinho... Ele deve ter mais ou menos a tua idade agora. Nasceu com um talento assustador. Ao quinto mês, ele já não criava escudos, ele destruía-os.
+SHIN: (Desfaz o escudo, curioso) Um sobrinho? Ele está no Exército da Luz?
+TAKUMI: Ele é o Vice Líder da 2ª Divisão. Mas aviso te desde já miúdo... se um dia te cruzares com ele, não esperes simpatia. O poder cega os jovens, e ele despreza profundamente os fracos.
+(A imagem do campo de treino desvanece lentamente em branco, dando lugar à névoa espessa.)
+CENA 2: A CHEGADA DA ELITE
+OLD YORK (PRESENTE) PRAÇA DA SOCIEDADE
+(Shin e Haruto estão rodeados por mais soldados rasos da escuridão. Os seus movimentos estão lentos, pesados, quase letárgicos devido à apatia que Vorgos instalou na cidade. Um soldado inimigo levanta a espada para desferir um golpe em Haruto, que mal tem forças para erguer a adaga.)
+(De repente, três feixes de luz cruzam o nevoeiro a uma velocidade supersónica. São kunais de luz extremamente densas. Elas cravam se diretamente no crânio de três soldados da escuridão em simultâneo. Os inimigos desfazem se em cinzas antes mesmo de tocarem no chão. Em segundos, uma chuva destas kunais extermina o resto do grupo.)
+(Do meio do nevoeiro, três figuras caminham a passos firmes. Dois são soldados veteranos da 2ª Divisão. À frente deles, com um olhar de puro tédio e desdém, está Ren, o sobrinho de Takumi.)
+REN: (Olha para Shin e Haruto, caídos de joelhos) É por isto que a Luz está a perder a guerra. Mandam lixo inútil para fazer o trabalho de verdadeiros guerreiros.
+SHIN: (A tentar levantar se, ofegante) Quem... quem és tu?
+REN: Eu sou Ren, Vice Líder da 2ª Divisão. E a única razão pela qual estou nesta cidade podre foi o vosso fracasso. (Ren fecha os olhos e respira fundo) Quando cheguei pela máquina LITT, percebi logo o que se passava. Apatia forçada. Uma Alma Elemental em ação.
+(Ren concentra a sua luz interior. Uma aura branca expande se dele como uma onda de radar invisível, varrendo os prédios e as ruas.)
+REN: A minha Alma Elemental é simples, mas não há um único rato neste mundo que se consiga esconder de mim num raio de três quilómetros. Sinto cada gota de elemento nesta cidade. (Ele abre os olhos, focando o olhar num ponto distante) Já te encontrei, Líder da 10ª Divisão.
+(Sem dizer uma única palavra a Shin ou Haruto, Ren arranca a uma velocidade alucinante na direção do esconderijo de Vorgos, deixando os seus dois soldados para trás.)
+CENA 3: O ANTÍDOTO DE LUZ
+PRAÇA DA SOCIEDADE (JUNTO À ESTÁTUA)
+(Os dois veteranos que acompanharam Ren aproximam se rapidamente de Shin e Haruto. Eles geram pequenas máscaras translúcidas feitas de luz pura e colocam nas nos rostos dos jovens.)
+SOLDADO VETERANO 1: Respirem fundo. Esta luz purifica o oxigénio e filtra a energia de Vorgos. Nós estudámos as táticas da 10ª Divisão.
+HARUTO: (Puxa o ar com força e os seus olhos recuperam o brilho) A minha energia... está a voltar. O peso desapareceu!
+SHIN: (Levanta se rapidamente) E os outros? O Recruta 3 e a Mia!
+(Os soldados colocam as máscaras nos dois recrutas que continuam no chão, completamente vazios de emoção e de olhos colados no asfalto.)
+SOLDADO VETERANO 2: Eles absorveram demasiado nevoeiro. A situação deles já avançou para um estado catatónico. A máscara vai limpar os pulmões deles, mas demorará pelo menos meia hora até que os cérebros voltem a produzir vontade própria. Eles não se conseguem mover.
+SHIN: Temos de ir atrás do Ren. O Líder da 10ª Divisão é perigoso demais!
+HARUTO: (Invoca as suas adagas, agora muito mais brilhantes) Deixem os dois encostados à estátua. Eles estão seguros com a máscara. Vamos!
+CENA 4: O CHOQUE DE TITÃS
+TERRAÇO DE UM PRÉDIO ABANDONADO
+(Ren aterra de forma suave no telhado. A alguns metros dele, Vorgos levanta se lentamente, envolto na sua capa negra. Mas antes que Ren possa lançar a sua primeira kunai, uma sombra colossal cai do céu, esmagando o chão entre os dois.)
+(A poeira dissipa se, revelando Goran, o Vice Líder da 10ª Divisão da Escuridão. Ele é um monstro de músculos pálidos e armadura pesada, segurando um martelo de guerra gigante feito de escuridão solidificada.)
+GORAN: (Voz rouca e profunda) Onde pensas que vais, passarinho de luz?
+VORGOS: (Ri de forma sádica) Excelente momento, Goran. Eu tenho... preparativos a fazer. Esta cidade está prestes a tornar se numa verdadeira obra de arte.
+(Enquanto Ren e Goran cruzam olhares letais, Vorgos transforma se em fumo negro e escapa rapidamente, deslizando pelos prédios de volta para a Praça da Sociedade, exatamente onde o Recruta 3 e a Recruta 4 ficaram sozinhos.)
+REN: (Sorri com arrogância) Achas que só porque não tens Alma Elemental, a tua força bruta serve de alguma coisa contra a elite?
+(A luta começa. Goran balança o martelo com uma força capaz de destruir o prédio. Ren é incrivelmente ágil, desviando se no último milímetro e contra atacando com rajadas de kunais explosivas. Cada impacto de Goran treme a estrutura, enquanto a luz de Ren corta a escuridão como lâminas cirúrgicas.)
+CENA 5: O VERDADEIRO PLANO DE VORGOS
+PRAÇA DA SOCIEDADE (NOVA FASE DO NEVOEIRO)
+(Vorgos chega ao topo da estátua da sociedade e olha lá para baixo para os dois recrutas imóveis. Ele abre os braços. O céu, que já era laranja e doentio, começa a escurecer vertiginosamente.)
+VORGOS: Toda a energia, toda a esperança que drenei desta cidade miserável durante meses... É hora de a libertar de uma só vez!
+(O nevoeiro que cobria as ruas começa a ficar completamente negro, espesso como tinta. É uma escuridão tão profunda que até os soldados inimigos de baixa patente, escondidos na cidade, começam a gritar e a sufocar com a pressão brutal daquele ambiente.)
+CENA 6: POROS ABERTOS
+RUA ABAIXO DO TERRAÇO DA LUTA
+(Shin, Haruto e os dois soldados veteranos chegam ofegantes à rua onde decorre a batalha entre Ren e Goran. Eles olham para cima e veem as explosões de luz branca e os estrondos do martelo negro. Nenhum dos quatro se atreve a intervir; a escala de poder daquela luta é absurdamente superior à deles.)
+(Mas de repente, o nevoeiro negro desce sobre eles como uma avalanche de alcatrão.)
+HARUTO: (Tosse violentamente) O que é isto? Não consigo ver nada a um palmo da cara!
+SHIN: (Cai de joelhos, sentindo os braços a pesar uma tonelada) As máscaras... as máscaras não estão a funcionar! Eu sinto a apatia a voltar com o dobro da força!
+SOLDADO VETERANO 1: (A olhar para a sua própria mão, em pânico) Não é o oxigénio... O nevoeiro ficou tão denso e concentrado que já não precisa de ser respirado. Ele está a entrar pelos poros da nossa pele! Não há como nos defendermos disto!
+(A câmara corta rapidamente para o topo do prédio. O combate atinge o seu clímax. Goran ergue o martelo para um ataque final e esmagador, mas Ren, mesmo sem usar máscara respiratória e envolto no nevoeiro negro, não demonstra qualquer fraqueza.)
+REN: (Com um olhar frio e implacável) Força bruta é para animais.
+(Num movimento de velocidade pura, Ren materializa uma lança de luz gigante na sua mão direita. Com um impulso que quebra o chão de betão, ele atravessa o corpo colossal de Goran antes que o martelo desça. A lança perfura o peito do Vice Líder da escuridão, e um clarão branco purificador explode a partir do seu interior.)
+(Goran arregala os olhos enquanto o seu corpo se começa a desintegrar em luz e cinzas.)
+(O ecrã congela no rosto indiferente de Ren a dar o golpe final, enquanto o mundo em redor mergulha num nevoeiro impenetrável e negro.)
+FIM DO EPISÓDIO 5`,
+
+    6: `6-EPISÓDIO 6: RESERVAS DE LUZ E O RENASCER DAS SOMBRAS
+PRÓLOGO: O RESUMO DO NARRADOR
+(Imagens rápidas do Ep. 5: A entrada triunfal de Ren, as kunais de luz, a morte de Goran sob a lança gigante e o nevoeiro negro que começou a infiltrar-se pelos poros dos recrutas.)
+NARRADOR: O Vice-Líder da 2ª Divisão, Ren, trouxe uma esperança arrogante a Old York, eliminando o braço direito de Vorgos com um único golpe. No entanto, a vitória foi fugaz. Vorgos libertou a reserva de meses de agonia, criando um nevoeiro negro tão denso que nem as máscaras de luz conseguem filtrar. Enquanto a cidade mergulha numa escuridão absoluta, Shin e Haruto lutam para não perderem a sua própria alma. Mas na guerra contra a 10ª Divisão, a morte pode ser apenas o início de um pesadelo ainda maior.
+CENA 1: A QUEDA DA PRIMEIRA DIVISÃO (FLASHBACK)
+BASE DA LUZ – CAMPO DE TIRO (10º Mês de Treino de Shin) (Shin está focado, disparando projéteis de luz rápidos contra alvos em movimento. Alguns acertam, outros dissipam-se no ar. Takumi observa-o com a calma habitual.)
+SHIN: (A respirar ritmadamente) Senhor Takumi... Tenho pensado muito no que disse sobre as divisões. Se o senhor é o líder da 2ª, quem é o líder da 1ª? Podia conhecer um dos guerreiros mais fortes da Luz? 
+TAKUMI: (O rosto de Takumi escurece, e ele suspira profundamente) Infelizmente, Shin... isso já não é possível. Na semana passada, ele foi morto numa emboscada em território inimigo.
+SHIN: (Pára de disparar, em choque) Morto? Mas... o líder da 1ª Divisão?
+TAKUMI: Sim. A Luz está fragilizada. Na próxima semana haverá uma competição aberta para decidir quem ocupará o cargo. Muitos esperavam que eu me candidatasse, mas decidi não o fazer. O meu dever agora é outro.
+SHIN: (Confuso) Não se vai candidatar? Mas senhor...
+TAKUMI: (Esboça um sorriso) Se quiseres, podemos ir ver a competição. Verás o nível dos generais que ainda nos restam.
+SHIN: (Os olhos brilham de empolgação) A sério? Eu adoraria! Quero ver do que a elite é realmente capaz!
+CENA 2: O TRIUNFO IMPOSSÍVEL
+TERRAÇO DO PRÉDIO – PRESENTE (Ren vira as costas às cinzas de Goran, limpando o pó da sua túnica com desdém. Ele prepara-se para saltar em direção à estátua, mas a sua Alma Elemental dispara um aviso de perigo máximo.)
+REN: (Estaca, os olhos arregalados) Impossível... a assinatura elemental... é a mesma? (Atrás dele, as cinzas negras aglutinam-se violentamente. Goran emerge do chão, mas agora a sua armadura brilha com uma aura púrpura e o seu tamanho parece ter duplicado. A pressão que ele emana racha o cimento do prédio.)
+GORAN: (Voz duplicada e estrondosa) Achaste que era assim tão fácil, passarinho?
+REN: (Recua um passo, a suar) Eu atravsei o teu núcleo! Tu devias estar extinto!
+GORAN: (Levanta o martelo, que agora emana relâmpagos negros) A minha Alma Elemental é o Eterno Retorno. Sempre que morro, volto com o dobro do poder. Podes matar-me outra vez... mas ficarei ainda mais forte. Só tenho um limite: se morrer três vezes no mesmo dia, a minha alma quebra. Mas olha para mim, Ren... tu mal aguentaste a primeira volta.
+(Goran ataca. O impacto do martelo é tão forte que o prédio inteiro começa a colapsar. Ren demonstra, pela primeira vez, um leve rastro de medo no olhar enquanto tenta desviar-se de golpes que viajam à velocidade do som.)
+CENA 3: A ESFERA DE SOBREVIVÊNCIA
+RUAS DE OLD YORK – ABAIXO (O nevoeiro negro é quase sólido. Shin, Haruto e os dois soldados veteranos estão de joelhos, a lutar contra o desejo de simplesmente desistirem e morrerem.)
+SOLDADO VETERANO 1: Se não fizermos nada... vamos ser consumidos!
+SHIN: (Apertando os dentes) Juntem... juntem a luz! Todos! (Os quatro unem as mãos. Uma bolha de luz intensa e apertada forma-se ao redor deles, empurrando o nevoeiro negro para fora. É uma esfera gigante onde o ar é puro, mas mantê-la exige um gasto de energia colossal.)
+HARUTO: O nevoeiro vem da estátua... temos de ir para lá! (Eles começam a correr por dentro da bola, fazendo-a rolar pelas ruas como uma esfera de hamster gigante. Devido à pressão externa e ao terreno acidentado, eles caem várias vezes, rolando uns por cima dos outros, mas Shin grita para continuarem a empurrar.)
+CENA 4: RESERVAS E CUBOS
+TERRAÇO EM QUEDA (Ren está ofegante. O seu rosto está apático devido ao nevoeiro negro, mas o seu corpo continua a mover-se com precisão robótica.)
+FLASHBACK RÁPIDO (Voz de Takumi): "Shin, os guerreiros de elite possuem uma Reserva de Luz. É uma energia profunda que, quando libertada, anula parcialmente os efeitos de Almas Elementais inimigas sobre o próprio corpo."
+(No presente, Ren recebe um golpe lateral do martelo de Goran. Ele é projetado através de dois prédios, mas recupera o equilíbrio no ar. Num movimento de desespero, ele concentra a sua luz numa lança maciça.)
+REN: (Grita) Cai de uma vez! (Goran coloca o martelo à frente, mas a lança de Ren atravessa o metal negro como se fosse papel e crava-se diretamente no rosto de Goran, explodindo-o novamente.)
+(Ren não espera pela terceira ressurreição. Ele salta do prédio e avista a bola de luz de Shin e Haruto lá em baixo. Ele aterra sobre a bola e, com um gesto de mão, transforma-a num Cubo de Luz perfeito que se move sozinho.)
+REN: (A arrogância volta ao seu rosto, embora esteja visivelmente exausto) Que visão patética. Estão a gastar a vossa energia básica para rolar uma bola?
+SHIN: (Admirado) Como é que ainda tens tanta força com este nevoeiro?
+REN: Chama-se Reserva de Luz. Algo que recrutas de baixo nível como vocês nem sonham ter.
+CENA 5: A DISTRAÇÃO E O DUELO FINAL
+BASE DA ESTÁTUA DA SOCIEDADE (Eles chegam à estátua. Ren olha para cima e vê Vorgos a sorrir no topo. Mas quando olha para trás, Goran já lá está — na sua terceira e mais poderosa forma, uma montanha de escuridão viva.)
+REN: Eu trato do Líder. Vocês... tentem não morrer contra esse monstro. (Ren escala a estátua a uma velocidade fenomenal. Shin e Haruto saem do cubo de proteção e avançam contra Goran. O choque é brutal; Goran nem se mexe, enquanto Shin e Haruto são repelidos como insetos.)
+HARUTO: (A tossir sangue) Ele está demasiado forte!
+SHIN: (Olha para o topo da estátua) Não temos de vencê-lo, Haruto! Temos de ser a distração! Se ele chegar ao Ren, acabou tudo!
+(Luta intensa: Shin usa o seu escudo para absorver impactos que fazem os seus ossos estalar, enquanto Haruto usa a sua velocidade para distrair Goran, gastando o resto da sua luz apenas para sobreviverem a cada segundo.)
+TOPO DA ESTÁTUA (Ren chega à frente de Vorgos. O líder da 10ª Divisão levanta-se. O seu corpo é envolvido por uma armadura de escuridão tão densa que parece distorcer o espaço à volta.)
+VORGOS: (Voz sibilante) Finalmente, um brinquedo que dura mais do que alguns minutos. (Vorgos dispara rajadas de escuridão líquida. Ren cria uma lança de luz de proporções épicas, o brilho é tão forte que ilumina a cidade inteira por um instante.)
+(A câmara foca na lança de Ren a colidir com a palma da mão de Vorgos e o ecrã corta para preto.)
+FIM DO EPISÓDIO 6`
+};
+
+function loadEpisode(num) {
+    const content = document.getElementById('story-content');
+    const btns = document.querySelectorAll('.episode-btn');
+    
+    // Reset buttons
+    btns.forEach(btn => btn.classList.remove('active'));
+    btns[num-1].classList.add('active');
+
+    // Get Text
+    let text = data[num];
+    
+    // Apply special styling to characters and scenes for a script look
+    let formattedText = text
+        .replace(/(EPISÓDIO \d+: .*)/g, '<div class="episode-main-title">$1</div>')
+        .replace(/(\(.*?\))/g, '<span class="action">$1</span>')
+        .replace(/^([A-Z\s]+(?:\s\d+)?(?: anos)?):/gm, '<span class="character">$1:</span>');
+
+    content.innerHTML = formattedText;
+    window.scrollTo({ top: 400, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
